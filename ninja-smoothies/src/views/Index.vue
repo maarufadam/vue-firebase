@@ -1,19 +1,18 @@
 <template>
   <div class="index container" style="marginTop: 50px">
     <div class="card" v-for="smoothie in smoothies" :key="smoothie.id">
-      <div class="card-content">
-        <i
-          class="material-icons delete center btn-floating pulse blue-grey lighten-5"
-          @click="deleteSmoothie(smoothie.id)"
-        >delete</i>
-        <h2 class="indigo-text">{{ smoothie.title }}</h2>
+      <span class="delete" @click="deleteSmoothie(smoothie.id)">
+        <i class="material-icons center">delete</i>
+      </span>
+      <div class="card-content" style="margin-top: 20px;">
+        <h2 class="card-title">{{ smoothie.title }}</h2>
         <ul class="ingredients">
           <li v-for="(ing, index) in smoothie.ingredients" :key="index">
             <span class="chip">{{ ing }}</span>
           </li>
         </ul>
       </div>
-      <span class="btn-floating btn-large halfway-fab pink">
+      <span class="btn-floating btn-large halfway-fab waves-effect waves-light pink">
         <router-link :to="{ name: 'EditSmoothie', params: { smoothie_slug: smoothie.slug } }">
           <i class="material-icons edit">edit</i>
         </router-link>
