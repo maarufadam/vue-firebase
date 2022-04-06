@@ -50,7 +50,7 @@ export default {
 					lower: true
 				})
 
-				// Add a new document in collection "cities"
+				// Add a new document in collection "smoothies"
 				addDoc(collection(db, "smoothies"), {
 					title: this.title,
 					ingredients: this.ingredients,
